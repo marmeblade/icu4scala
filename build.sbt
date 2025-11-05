@@ -9,6 +9,9 @@ inThisBuild(
     organization := "works.perpetuum",
     organizationName := "Perpetuum Works",
     versionScheme := Some("early-semver"),
+    homepage := Some(
+      url("https://github.com/marmeblade/icu4scala")
+    ),
     startYear := Some(2024),
     licenses := List(
       "Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")
