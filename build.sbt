@@ -9,6 +9,7 @@ inThisBuild(
     version := "0.1.0",
     organization := "works.perpetuum",
     organizationName := "Perpetuum Works",
+    versionScheme := Some("early-semver"),
     homepage := Some(
       url("https://github.com/marmeblade/icu4scala")
     ),
