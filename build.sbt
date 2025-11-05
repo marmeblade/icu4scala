@@ -12,6 +12,12 @@ inThisBuild(
     homepage := Some(
       url("https://github.com/marmeblade/icu4scala")
     ),
+    scmInfo := Some(
+      ScmInfo(
+        url("https://github.com/marmeblade/icu4scala"),
+        "scm:git@github.com:marmeblade/icu4scala.git"
+      )
+    ),
     startYear := Some(2024),
     licenses := List(
       "Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")

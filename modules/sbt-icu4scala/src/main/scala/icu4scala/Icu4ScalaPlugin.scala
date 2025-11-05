@@ -97,11 +97,11 @@ object Icu4ScalaPlugin extends AutoPlugin {
                   s"'${language.getOrElse("-")}': $errorMessage"
               )
             case ParamError(
-            existingParamLanguage,
-            existingParam,
-            collidingParamLanguage,
-            collidingParam
-            ) =>
+                  existingParamLanguage,
+                  existingParam,
+                  collidingParamLanguage,
+                  collidingParam
+                ) =>
               streams.log.error(
                 s"ICU: Error with colliding param '${collidingParam.paramName}' " +
                   s"in language '$collidingParamLanguage' and existing param " +

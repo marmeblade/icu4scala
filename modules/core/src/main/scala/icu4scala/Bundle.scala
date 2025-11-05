@@ -359,7 +359,7 @@ object Bundle {
                 paramMap
               )
             case None =>
-              (errors, paramMap + (param.paramName -> (paramLanguage, param)))
+              (errors, paramMap + (param.paramName -> ((paramLanguage, param))))
           }
         }
 

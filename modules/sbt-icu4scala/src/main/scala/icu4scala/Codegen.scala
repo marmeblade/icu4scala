@@ -16,9 +16,9 @@
 
 package icu4scala
 
-import icu4scala.AST.*
-
 import scala.annotation.nowarn
+
+import icu4scala.AST._
 
 @nowarn
 object Codegen {
