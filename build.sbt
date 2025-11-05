@@ -115,7 +115,7 @@ lazy val sbtPlugin = project
       "org.scala-sbt" %% "util-position" % "1.11.7",
       "org.scala-sbt" %% "util-tracking" % "1.11.7"
     ),
-    missinglinkIgnoreDestinationPackages++= Seq(
+    missinglinkIgnoreDestinationPackages ++= Seq(
       IgnoredPackage("org.osgi.framework"),
       IgnoredPackage("org.slf4j.ext"),
       IgnoredPackage("org.conscrypt")
