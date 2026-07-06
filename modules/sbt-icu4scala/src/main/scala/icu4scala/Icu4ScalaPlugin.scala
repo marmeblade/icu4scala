@@ -18,7 +18,6 @@ package icu4scala
 
 import sbt.Keys._
 import sbt._
-import sbt.internal.io.Source
 import sbt.plugins.JvmPlugin
 
 //noinspection ScalaUnusedSymbol
@@ -31,8 +30,11 @@ object Icu4ScalaPlugin extends AutoPlugin {
   object autoImport {
     val icuBundlePackageName =
       settingKey[String]("Package name for the ICU bundle.")
+
+    @transient
     val generateIcuBundleTask =
       taskKey[Seq[File]]("The ICU bundle generation task.")
+
     val icuSourceDirectory =
       settingKey[File]("Directory containing ICU source files (.conf).")
 //    val icuBreakOnMissingKeys =
@@ -48,21 +50,18 @@ object Icu4ScalaPlugin extends AutoPlugin {
 
   override lazy val projectSettings: Seq[Def.Setting[?]] =
     inConfig(Compile)(
-      watchSourceSettings ++
-        Seq(
-          icuSource := "icu",
-          icuSourceDirectory := (Compile / sourceDirectory).value / icuSource.value,
-          generateIcuBundleTask := generateFromSource(
-            streams.value,
-            icuSourceDirectory.value,
-            streams.value.cacheDirectory / icuSource.value,
-            sourceManaged.value / "sbt-icu4scala",
-            icuBundlePackageName.value
-          ),
-          packageSrc / mappings ++= managedSources.value pair (Path
-            .relativeTo(sourceManaged.value) | Path.flat),
-          sourceGenerators += generateIcuBundleTask.taskValue
-        )
+      Seq(
+        icuSource := "icu",
+        icuSourceDirectory := (Compile / sourceDirectory).value / icuSource.value,
+        generateIcuBundleTask := generateFromSource(
+          streams.value,
+          icuSourceDirectory.value,
+          streams.value.cacheDirectory / icuSource.value,
+          sourceManaged.value / "sbt-icu4scala",
+          icuBundlePackageName.value
+        ),
+        sourceGenerators += generateIcuBundleTask.taskValue
+      )
     ) ++ Seq(icuBundlePackageName := "org.example.icu")
 
   private def generateFromSource(
@@ -120,17 +119,6 @@ object Icu4ScalaPlugin extends AutoPlugin {
     // put the input file into a `Set` (as required by `cachedFun`),
     // pass it to the `cachedFun`,
     // convert the result to `Seq` (as required by `Def.task`)
-    cachedFun(srcDir.allPaths.get.toSet).toSeq
+    cachedFun(srcDir.allPaths.get().toSet).toSeq
   }
-
-  private def watchSourceSettings =
-    Def.settings(
-      Seq(
-        watchSources in Defaults.ConfigGlobal += new Source(
-          sourceDirectory.value / icuSource.value,
-          AllPassFilter,
-          NothingFilter
-        )
-      )
-    )
 }

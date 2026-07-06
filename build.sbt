@@ -34,6 +34,15 @@ val Scala3 = "3.8.4"
 val Scala213 = "2.13.18"
 val Scala212 = "2.12.21"
 
+lazy val root = project.in(file("."))
+  .aggregate(core.projectRefs *)
+  .aggregate(docs)
+  .aggregate(sbtPlugin.projectRefs *)
+  .settings(
+    publish / skip := true,
+    publishLocal / skip := true
+  )
+
 lazy val core = projectMatrix
   .in(file("modules/core"))
   .settings(
@@ -65,13 +74,11 @@ lazy val docs = project
   )
   .dependsOn(core.jvm(Scala213))
 
-lazy val sbtPlugin = project
+lazy val sbtPlugin = projectMatrix
   .enablePlugins(SbtPlugin)
   .in(file("modules/sbt-icu4scala"))
   .settings(
     name := "sbt-icu4scala",
-    scalaVersion := Scala212,
-    crossScalaVersions := Seq(Scala212, Scala3),
     pluginCrossBuild / sbtVersion := {
       scalaBinaryVersion.value match {
         case "2.12" => "1.11.7"
@@ -90,9 +97,10 @@ lazy val sbtPlugin = project
       IgnoredPackage("org.conscrypt")
     )
   )
+  .jvmPlatform(Seq(Scala212, Scala3))
   .dependsOn(
-    core.jvm(Scala212),
-    core.jvm(Scala212) % "test->test"
+    core,
+    core % "test->test"
   )
 
 val scalafixRules = Seq(

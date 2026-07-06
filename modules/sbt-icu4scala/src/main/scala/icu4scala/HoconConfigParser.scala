@@ -18,8 +18,7 @@ package icu4scala
 
 import java.io.File
 
-import scala.jdk.CollectionConverters.asScalaSetConverter
-import scala.jdk.CollectionConverters.collectionAsScalaIterableConverter
+import scala.jdk.CollectionConverters._
 import scala.util.Try
 
 import com.typesafe.config.Config
