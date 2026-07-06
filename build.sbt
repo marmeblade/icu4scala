@@ -52,6 +52,19 @@ lazy val core = projectMatrix
   .jsPlatform(Seq(Scala3, Scala212, Scala213))
   .nativePlatform(Seq(Scala3, Scala212, Scala213))
 
+lazy val docs = project
+  .in(file("modules/icu4scala-docs"))
+  .enablePlugins(MdocPlugin)
+  .settings(
+    scalaVersion := Scala213,
+    mdocVariables := Map(
+      "VERSION" -> version.value
+    ),
+    publish / skip := true,
+    publishLocal / skip := true
+  )
+  .dependsOn(core.jvm(Scala213))
+
 lazy val sbtPlugin = project
   .enablePlugins(SbtPlugin)
   .in(file("modules/sbt-icu4scala"))
@@ -94,7 +107,7 @@ val CICommands = Seq(
   "scalafixEnable",
   "compile",
   "test",
-  "docs/mdoc",
+  "docs / mdoc",
   "scalafmtCheckAll",
   "scalafmtSbtCheck",
   s"scalafix --check $scalafixRules",
