@@ -1,23 +1,19 @@
-addSbtPlugin("com.github.sbt" % "sbt-ci-release" % "1.11.2")
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.22.0")
 
-addSbtPlugin("com.eed3si9n" % "sbt-projectmatrix" % "0.11.0")
+addSbtPlugin("org.scala-native" % "sbt-scala-native" % "0.5.12")
 
-addSbtPlugin("org.typelevel" % "sbt-tpolecat" % "0.5.2")
+addSbtPlugin("org.typelevel" % "sbt-tpolecat" % "0.5.7")
 
-addSbtPlugin("ch.epfl.scala" % "sbt-missinglink" % "0.3.6")
+addSbtPlugin("ch.epfl.scala" % "sbt-missinglink" % "0.3.7")
 
-addSbtPlugin("com.github.cb372" % "sbt-explicit-dependencies" % "0.3.1")
+addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.6.1")
 
-addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.5.6")
+addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.7")
 
-addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.4")
+addSbtPlugin("com.github.sbt" % "sbt-header" % "5.11.0")
 
-addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.13.1")
+addSbtPlugin("org.scalameta" % "sbt-mdoc" % "2.9.0")
 
-addSbtPlugin("de.heikoseeberger" % "sbt-header" % "5.10.0")
+addSbtPlugin("com.github.sbt" % "sbt-dynver" % "5.1.1")
 
-addSbtPlugin("org.scalameta" % "sbt-mdoc" % "2.8.0")
-
-addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.20.1")
-
-addSbtPlugin("org.scala-native" % "sbt-scala-native" % "0.5.9")
+addSbtPlugin("com.github.sbt" % "sbt-pgp" % "2.3.1")

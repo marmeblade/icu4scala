@@ -17,6 +17,11 @@ The library consists of a core part that parses the ICU expressions and defines 
 as well as the Bundle Format and their Translator instance. 
 That way we can translate entities using the common string keys (e.g. "x.y.z").
 
+## TODO
+
+- Fix incomplete complex example with ICU offsets
+- make source dir explicit, so we can use it with sbt crossproject and prevent double code generation.
+
 ## Motivation
 
 The main selling point is the compile-time generation of Bundle classes.

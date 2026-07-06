@@ -16,8 +16,8 @@
 
 package icu4scala
 
-import sbt.Keys._
-import sbt._
+import sbt.Keys.*
+import sbt.*
 import sbt.internal.io.Source
 import sbt.plugins.JvmPlugin
 
@@ -33,6 +33,8 @@ object Icu4ScalaPlugin extends AutoPlugin {
       settingKey[String]("Package name for the ICU bundle.")
     val generateIcuBundleTask =
       taskKey[Seq[File]]("The ICU bundle generation task.")
+    val icuSourceDirectory =
+      settingKey[File]("Directory containing ICU source files (.conf).")
 //    val icuBreakOnMissingKeys =
 //      settingKey[Boolean]("Option to break generation task on missing keys in configuration.")
 
@@ -49,9 +51,10 @@ object Icu4ScalaPlugin extends AutoPlugin {
       watchSourceSettings ++
         Seq(
           icuSource := "icu",
+          icuSourceDirectory := (Compile / sourceDirectory).value / icuSource.value,
           generateIcuBundleTask := generateFromSource(
             streams.value,
-            sourceDirectory.value / icuSource.value,
+            icuSourceDirectory.value,
             streams.value.cacheDirectory / icuSource.value,
             sourceManaged.value / "sbt-icu4scala",
             icuBundlePackageName.value

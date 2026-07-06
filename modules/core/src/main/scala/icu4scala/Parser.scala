@@ -18,9 +18,9 @@ package icu4scala
 
 import scala.annotation.nowarn
 
-import fastparse.NoWhitespace._
-import fastparse._
-import icu4scala.AST._
+import fastparse.NoWhitespace.*
+import fastparse.*
+import icu4scala.AST.*
 
 @nowarn
 object Parser {
@@ -115,7 +115,7 @@ object Parser {
     val trimmedInput: String =
       input.trim.replaceAll("\\{\\s*\\{", "{{").replaceAll("}\\s*}", "}}")
 
-    parse(trimmedInput, icuExpr(_))
+    parse(trimmedInput, implicit p => icuExpr)
   }
 
   private def stringChars(c: Char): Boolean =
