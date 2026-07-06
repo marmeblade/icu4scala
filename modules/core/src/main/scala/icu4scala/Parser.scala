@@ -18,9 +18,9 @@ package icu4scala
 
 import scala.annotation.nowarn
 
-import fastparse.NoWhitespace.*
-import fastparse.*
-import icu4scala.AST.*
+import fastparse.NoWhitespace._
+import fastparse._
+import icu4scala.AST._
 
 @nowarn
 object Parser {

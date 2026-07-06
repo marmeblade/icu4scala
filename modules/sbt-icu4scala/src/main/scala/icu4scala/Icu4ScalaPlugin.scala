@@ -16,8 +16,8 @@
 
 package icu4scala
 
-import sbt.Keys.*
-import sbt.*
+import sbt.Keys._
+import sbt._
 import sbt.internal.io.Source
 import sbt.plugins.JvmPlugin
 
