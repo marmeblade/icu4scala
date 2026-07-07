@@ -96,6 +96,10 @@ lazy val sbtPlugin = projectMatrix
       IgnoredPackage("org.osgi.framework"),
       IgnoredPackage("org.slf4j.ext"),
       IgnoredPackage("org.conscrypt")
+    ),
+    missinglinkExcludedDependencies ++= Seq(
+      moduleFilter(organization = "org.scala-sbt", name = "librarymanagement-coursier_3"),
+      moduleFilter(organization = "org.slf4j", name = "slf4j-api")
     )
   )
   .jvmPlatform(Seq(Scala212, Scala3))
