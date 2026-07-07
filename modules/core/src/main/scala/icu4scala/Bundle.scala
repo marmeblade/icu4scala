@@ -208,21 +208,22 @@ case class Bundle(
 
 //      println((depth, entryGroups.keys))
 
-      entryGroups.toSeq.sortBy(_._1._1.mkString("")).collect { case ((nextPath, None), matchingEntries) =>
-        val exactEntry = matchingEntries.find(_.key == nextPath)
+      entryGroups.toSeq.sortBy(_._1._1.mkString("")).collect {
+        case ((nextPath, None), matchingEntries) =>
+          val exactEntry = matchingEntries.find(_.key == nextPath)
 
-        val subEntries =
-          if (exactEntry.isDefined && matchingEntries.length == 1) {
-            Seq()
-          } else {
-            inner(depth + 1, matchingEntries)
-          }
+          val subEntries =
+            if (exactEntry.isDefined && matchingEntries.length == 1) {
+              Seq()
+            } else {
+              inner(depth + 1, matchingEntries)
+            }
 
-        StructuredBundleEntry(
-          nextPath,
-          exactEntry,
-          subEntries
-        )
+          StructuredBundleEntry(
+            nextPath,
+            exactEntry,
+            subEntries
+          )
       }
     }
 

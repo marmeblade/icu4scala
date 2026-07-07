@@ -17,9 +17,9 @@
 package icu4scala
 
 import scala.annotation.nowarn
-import icu4scala.AST.*
-
 import scala.collection.immutable.TreeMap
+
+import icu4scala.AST._
 
 @nowarn
 object Codegen {
