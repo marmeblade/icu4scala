@@ -214,379 +214,6 @@ object Bundle {
     def key30: Key30
   }
 
-  object fr extends I18N {
-    object key01 extends Key01 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key01.complex??"""
-      }
-      def simple(name: String): String = {
-        val sb = new StringBuilder()
-        sb.append("""Bonjour, """)
-        sb.append(name)
-        sb.append("""! (1)""")
-        sb.toString()
-      }
-      val static: String = {
-        """??key01.static??"""
-      }
-    }
-    object key02 extends Key02 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key02.complex??"""
-      }
-      def simple(name: String): String = {
-        val sb = new StringBuilder()
-        sb.append("""Bonjour, """)
-        sb.append(name)
-        sb.append("""! (2)""")
-        sb.toString()
-      }
-      val static: String = {
-        """??key02.static??"""
-      }
-    }
-    object key03 extends Key03 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key03.complex??"""
-      }
-      def simple(name: String): String = {
-        val sb = new StringBuilder()
-        sb.append("""Bonjour, """)
-        sb.append(name)
-        sb.append("""! (3)""")
-        sb.toString()
-      }
-      val static: String = {
-        """??key03.static??"""
-      }
-    }
-    object key04 extends Key04 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key04.complex??"""
-      }
-      def simple(name: String): String = {
-        val sb = new StringBuilder()
-        sb.append("""Bonjour, """)
-        sb.append(name)
-        sb.append("""! (4)""")
-        sb.toString()
-      }
-      val static: String = {
-        """??key04.static??"""
-      }
-    }
-    object key05 extends Key05 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key05.complex??"""
-      }
-      def simple(name: String): String = {
-        val sb = new StringBuilder()
-        sb.append("""Bonjour, """)
-        sb.append(name)
-        sb.append("""! (5)""")
-        sb.toString()
-      }
-      val static: String = {
-        """??key05.static??"""
-      }
-    }
-    object key06 extends Key06 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key06.complex??"""
-      }
-      def simple(name: String): String = {
-        val sb = new StringBuilder()
-        sb.append("""Bonjour, """)
-        sb.append(name)
-        sb.append("""! (6)""")
-        sb.toString()
-      }
-      val static: String = {
-        """??key06.static??"""
-      }
-    }
-    object key07 extends Key07 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key07.complex??"""
-      }
-      def simple(name: String): String = {
-        val sb = new StringBuilder()
-        sb.append("""Bonjour, """)
-        sb.append(name)
-        sb.append("""! (7)""")
-        sb.toString()
-      }
-      val static: String = {
-        """??key07.static??"""
-      }
-    }
-    object key08 extends Key08 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key08.complex??"""
-      }
-      def simple(name: String): String = {
-        val sb = new StringBuilder()
-        sb.append("""Bonjour, """)
-        sb.append(name)
-        sb.append("""! (8)""")
-        sb.toString()
-      }
-      val static: String = {
-        """??key08.static??"""
-      }
-    }
-    object key09 extends Key09 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key09.complex??"""
-      }
-      def simple(name: String): String = {
-        val sb = new StringBuilder()
-        sb.append("""Bonjour, """)
-        sb.append(name)
-        sb.append("""! (9)""")
-        sb.toString()
-      }
-      val static: String = {
-        """??key09.static??"""
-      }
-    }
-    object key10 extends Key10 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key10.complex??"""
-      }
-      def simple(name: String): String = {
-        val sb = new StringBuilder()
-        sb.append("""Bonjour, """)
-        sb.append(name)
-        sb.append("""! (10)""")
-        sb.toString()
-      }
-      val static: String = {
-        """??key10.static??"""
-      }
-    }
-    object key11 extends Key11 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key11.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key11.simple??"""
-      }
-      val static: String = {
-        """??key11.static??"""
-      }
-    }
-    object key12 extends Key12 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key12.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key12.simple??"""
-      }
-      val static: String = {
-        """??key12.static??"""
-      }
-    }
-    object key13 extends Key13 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key13.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key13.simple??"""
-      }
-      val static: String = {
-        """??key13.static??"""
-      }
-    }
-    object key14 extends Key14 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key14.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key14.simple??"""
-      }
-      val static: String = {
-        """??key14.static??"""
-      }
-    }
-    object key15 extends Key15 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key15.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key15.simple??"""
-      }
-      val static: String = {
-        """??key15.static??"""
-      }
-    }
-    object key16 extends Key16 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key16.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key16.simple??"""
-      }
-      val static: String = {
-        """??key16.static??"""
-      }
-    }
-    object key17 extends Key17 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key17.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key17.simple??"""
-      }
-      val static: String = {
-        """??key17.static??"""
-      }
-    }
-    object key18 extends Key18 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key18.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key18.simple??"""
-      }
-      val static: String = {
-        """??key18.static??"""
-      }
-    }
-    object key19 extends Key19 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key19.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key19.simple??"""
-      }
-      val static: String = {
-        """??key19.static??"""
-      }
-    }
-    object key20 extends Key20 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key20.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key20.simple??"""
-      }
-      val static: String = {
-        """??key20.static??"""
-      }
-    }
-    object key21 extends Key21 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key21.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key21.simple??"""
-      }
-      val static: String = {
-        """??key21.static??"""
-      }
-    }
-    object key22 extends Key22 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key22.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key22.simple??"""
-      }
-      val static: String = {
-        """??key22.static??"""
-      }
-    }
-    object key23 extends Key23 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key23.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key23.simple??"""
-      }
-      val static: String = {
-        """??key23.static??"""
-      }
-    }
-    object key24 extends Key24 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key24.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key24.simple??"""
-      }
-      val static: String = {
-        """??key24.static??"""
-      }
-    }
-    object key25 extends Key25 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key25.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key25.simple??"""
-      }
-      val static: String = {
-        """??key25.static??"""
-      }
-    }
-    object key26 extends Key26 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key26.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key26.simple??"""
-      }
-      val static: String = {
-        """??key26.static??"""
-      }
-    }
-    object key27 extends Key27 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key27.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key27.simple??"""
-      }
-      val static: String = {
-        """??key27.static??"""
-      }
-    }
-    object key28 extends Key28 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key28.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key28.simple??"""
-      }
-      val static: String = {
-        """??key28.static??"""
-      }
-    }
-    object key29 extends Key29 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key29.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key29.simple??"""
-      }
-      val static: String = {
-        """??key29.static??"""
-      }
-    }
-    object key30 extends Key30 {
-      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
-        """??key30.complex??"""
-      }
-      def simple(name: String): String = {
-        """??key30.simple??"""
-      }
-      val static: String = {
-        """??key30.static??"""
-      }
-    }
-  }
-
   object de extends I18N {
     object key01 extends Key01 {
       def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
@@ -6106,10 +5733,383 @@ object Bundle {
     }
   }
 
+  object fr extends I18N {
+    object key01 extends Key01 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key01.complex??"""
+      }
+      def simple(name: String): String = {
+        val sb = new StringBuilder()
+        sb.append("""Bonjour, """)
+        sb.append(name)
+        sb.append("""! (1)""")
+        sb.toString()
+      }
+      val static: String = {
+        """??key01.static??"""
+      }
+    }
+    object key02 extends Key02 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key02.complex??"""
+      }
+      def simple(name: String): String = {
+        val sb = new StringBuilder()
+        sb.append("""Bonjour, """)
+        sb.append(name)
+        sb.append("""! (2)""")
+        sb.toString()
+      }
+      val static: String = {
+        """??key02.static??"""
+      }
+    }
+    object key03 extends Key03 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key03.complex??"""
+      }
+      def simple(name: String): String = {
+        val sb = new StringBuilder()
+        sb.append("""Bonjour, """)
+        sb.append(name)
+        sb.append("""! (3)""")
+        sb.toString()
+      }
+      val static: String = {
+        """??key03.static??"""
+      }
+    }
+    object key04 extends Key04 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key04.complex??"""
+      }
+      def simple(name: String): String = {
+        val sb = new StringBuilder()
+        sb.append("""Bonjour, """)
+        sb.append(name)
+        sb.append("""! (4)""")
+        sb.toString()
+      }
+      val static: String = {
+        """??key04.static??"""
+      }
+    }
+    object key05 extends Key05 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key05.complex??"""
+      }
+      def simple(name: String): String = {
+        val sb = new StringBuilder()
+        sb.append("""Bonjour, """)
+        sb.append(name)
+        sb.append("""! (5)""")
+        sb.toString()
+      }
+      val static: String = {
+        """??key05.static??"""
+      }
+    }
+    object key06 extends Key06 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key06.complex??"""
+      }
+      def simple(name: String): String = {
+        val sb = new StringBuilder()
+        sb.append("""Bonjour, """)
+        sb.append(name)
+        sb.append("""! (6)""")
+        sb.toString()
+      }
+      val static: String = {
+        """??key06.static??"""
+      }
+    }
+    object key07 extends Key07 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key07.complex??"""
+      }
+      def simple(name: String): String = {
+        val sb = new StringBuilder()
+        sb.append("""Bonjour, """)
+        sb.append(name)
+        sb.append("""! (7)""")
+        sb.toString()
+      }
+      val static: String = {
+        """??key07.static??"""
+      }
+    }
+    object key08 extends Key08 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key08.complex??"""
+      }
+      def simple(name: String): String = {
+        val sb = new StringBuilder()
+        sb.append("""Bonjour, """)
+        sb.append(name)
+        sb.append("""! (8)""")
+        sb.toString()
+      }
+      val static: String = {
+        """??key08.static??"""
+      }
+    }
+    object key09 extends Key09 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key09.complex??"""
+      }
+      def simple(name: String): String = {
+        val sb = new StringBuilder()
+        sb.append("""Bonjour, """)
+        sb.append(name)
+        sb.append("""! (9)""")
+        sb.toString()
+      }
+      val static: String = {
+        """??key09.static??"""
+      }
+    }
+    object key10 extends Key10 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key10.complex??"""
+      }
+      def simple(name: String): String = {
+        val sb = new StringBuilder()
+        sb.append("""Bonjour, """)
+        sb.append(name)
+        sb.append("""! (10)""")
+        sb.toString()
+      }
+      val static: String = {
+        """??key10.static??"""
+      }
+    }
+    object key11 extends Key11 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key11.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key11.simple??"""
+      }
+      val static: String = {
+        """??key11.static??"""
+      }
+    }
+    object key12 extends Key12 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key12.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key12.simple??"""
+      }
+      val static: String = {
+        """??key12.static??"""
+      }
+    }
+    object key13 extends Key13 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key13.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key13.simple??"""
+      }
+      val static: String = {
+        """??key13.static??"""
+      }
+    }
+    object key14 extends Key14 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key14.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key14.simple??"""
+      }
+      val static: String = {
+        """??key14.static??"""
+      }
+    }
+    object key15 extends Key15 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key15.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key15.simple??"""
+      }
+      val static: String = {
+        """??key15.static??"""
+      }
+    }
+    object key16 extends Key16 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key16.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key16.simple??"""
+      }
+      val static: String = {
+        """??key16.static??"""
+      }
+    }
+    object key17 extends Key17 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key17.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key17.simple??"""
+      }
+      val static: String = {
+        """??key17.static??"""
+      }
+    }
+    object key18 extends Key18 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key18.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key18.simple??"""
+      }
+      val static: String = {
+        """??key18.static??"""
+      }
+    }
+    object key19 extends Key19 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key19.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key19.simple??"""
+      }
+      val static: String = {
+        """??key19.static??"""
+      }
+    }
+    object key20 extends Key20 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key20.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key20.simple??"""
+      }
+      val static: String = {
+        """??key20.static??"""
+      }
+    }
+    object key21 extends Key21 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key21.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key21.simple??"""
+      }
+      val static: String = {
+        """??key21.static??"""
+      }
+    }
+    object key22 extends Key22 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key22.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key22.simple??"""
+      }
+      val static: String = {
+        """??key22.static??"""
+      }
+    }
+    object key23 extends Key23 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key23.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key23.simple??"""
+      }
+      val static: String = {
+        """??key23.static??"""
+      }
+    }
+    object key24 extends Key24 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key24.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key24.simple??"""
+      }
+      val static: String = {
+        """??key24.static??"""
+      }
+    }
+    object key25 extends Key25 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key25.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key25.simple??"""
+      }
+      val static: String = {
+        """??key25.static??"""
+      }
+    }
+    object key26 extends Key26 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key26.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key26.simple??"""
+      }
+      val static: String = {
+        """??key26.static??"""
+      }
+    }
+    object key27 extends Key27 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key27.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key27.simple??"""
+      }
+      val static: String = {
+        """??key27.static??"""
+      }
+    }
+    object key28 extends Key28 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key28.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key28.simple??"""
+      }
+      val static: String = {
+        """??key28.static??"""
+      }
+    }
+    object key29 extends Key29 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key29.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key29.simple??"""
+      }
+      val static: String = {
+        """??key29.static??"""
+      }
+    }
+    object key30 extends Key30 {
+      def complex(host: String, guest: String, num_guests: Long, gender_of_host: String): String = {
+        """??key30.complex??"""
+      }
+      def simple(name: String): String = {
+        """??key30.simple??"""
+      }
+      val static: String = {
+        """??key30.static??"""
+      }
+    }
+  }
+
   val languages: Map[String, I18N] = Map(
-    "fr" -> fr,
     "de" -> de,
     "en" -> en,
-    "es" -> es
+    "es" -> es,
+    "fr" -> fr
   )
 }

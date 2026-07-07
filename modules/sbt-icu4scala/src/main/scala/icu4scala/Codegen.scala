@@ -17,8 +17,9 @@
 package icu4scala
 
 import scala.annotation.nowarn
+import icu4scala.AST.*
 
-import icu4scala.AST._
+import scala.collection.immutable.TreeMap
 
 @nowarn
 object Codegen {
@@ -31,9 +32,9 @@ object Codegen {
     val singleStringQuotation = """""""
     val tripleStringQuotation = """""""""
 
-    val lsbs = bundle.availableLanguages.map {
-      _ -> new StringBuilder()
-    }.toMap
+    val lsbs = TreeMap(bundle.availableLanguages.toSeq.map { lang =>
+      lang -> new StringBuilder()
+    }: _*)
 
     def quoteName(name: String): String = {
       def isValidScalaName(name: String): Boolean = {
@@ -474,7 +475,7 @@ object Codegen {
 
     sb.append(indentation).append("val languages: Map[String, I18N] = Map(\n")
 
-    bundle.availableLanguages.zipWithIndex.foreach { case (lang, idx) =>
+    bundle.availableLanguages.toList.sorted.zipWithIndex.foreach { case (lang, idx) =>
       sb.append(indentation)
         .append(indentation)
         .append(singleStringQuotation)
