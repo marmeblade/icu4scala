@@ -32,7 +32,7 @@ object HoconConfigParser {
       fallbackLanguage: Option[String]
   ): Either[Seq[BundleError], Bundle] =
     createSingleConfig(files).flatMap { config =>
-      val entryResults = config.entrySet().asScala.toList.map { entry =>
+      val entryResults = config.entrySet().asScala.toList.sortBy(_.getKey).map { entry =>
         ConfigUtil.splitPath(entry.getKey).asScala.toList match {
           case Nil =>
             Left(ParseError(Nil, None, "No entries in config exists."))

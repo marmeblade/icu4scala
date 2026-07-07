@@ -208,7 +208,7 @@ case class Bundle(
 
 //      println((depth, entryGroups.keys))
 
-      entryGroups.toSeq.collect { case ((nextPath, None), matchingEntries) =>
+      entryGroups.toSeq.sortBy(_._1._1.mkString("")).collect { case ((nextPath, None), matchingEntries) =>
         val exactEntry = matchingEntries.find(_.key == nextPath)
 
         val subEntries =
@@ -267,7 +267,7 @@ object Bundle {
     }
 
     val entriesResult: Seq[Either[Seq[BundleError], (String, BundleEntry)]] =
-      parseResults.groupBy(_._1).toSeq.map { case (key, parsedEntries) =>
+      parseResults.groupBy(_._1).toSeq.sortBy(_._1.mkString("")).map { case (key, parsedEntries) =>
         // Parses and checks all language translations of a single entry
         val languageMap =
           parsedEntries.collect { case (_, language, Right(fragments)) =>

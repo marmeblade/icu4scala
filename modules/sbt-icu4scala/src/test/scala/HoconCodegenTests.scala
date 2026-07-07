@@ -34,6 +34,7 @@ class HoconCodegenTests extends munit.FunSuite {
 
       result match {
         case Right(Some(bundleCode)) =>
+//          saveResource("ExpectedBundle.scala.txt", bundleCode)
           val expectedBundleCode = loadResource("ExpectedBundle.scala.txt")
 
           assertEquals(bundleCode, expectedBundleCode)
@@ -68,6 +69,12 @@ class HoconCodegenTests extends munit.FunSuite {
     finally source.close()
   }
 
+//  private def saveResource(relativePath: String, content: String): Unit = {
+//    val absolutePath = Paths.get(s"modules/sbt-icu4scala/src/test/resources/$relativePath")
+//    Files.write(absolutePath, content.getBytes(StandardCharsets.UTF_8))
+//    println(s"New reference file written to: ${absolutePath.toAbsolutePath}")
+//  }
+
   private def generateHoconString(languageCode: String, numEntries: Int): String = {
     def optionToHoconString(data: Option[String]): String = data match {
       case Some(d) => "\"\"\"" + d + "\"\"\""
@@ -75,6 +82,8 @@ class HoconCodegenTests extends munit.FunSuite {
     }
 
     val entries = (1 to numEntries).map { i =>
+      val paddedIdx = padNumber(i, numEntries)
+
       val (staticOption, simpleOption, complexOption) = languageCode match {
         case "en" =>
           (
@@ -107,7 +116,7 @@ class HoconCodegenTests extends munit.FunSuite {
       val simple = optionToHoconString(simpleOption)
       val complex = optionToHoconString(complexOption)
 
-      s"""  key$i {
+      s"""  key$paddedIdx {
          |    static = $static
          |    simple = $simple
          |    complex = $complex
@@ -120,4 +129,7 @@ class HoconCodegenTests extends munit.FunSuite {
        |}
        |""".stripMargin
   }
+
+  private def padNumber(number: Int, numEntries: Int): String =
+    s"%0${numEntries.toString.length}d".format(number)
 }
