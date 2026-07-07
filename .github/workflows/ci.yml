@@ -35,12 +35,26 @@ jobs:
           gpg_private_key: ${{ secrets.PGP_SECRET }}
           passphrase: ${{ secrets.PGP_PASSPHRASE }}
 
-      - name: Publish ${{ github.ref }}
+      - name: Publish locally and sign ${{ github.ref }}
+        if: startsWith(github.ref, 'refs/tags/v')
         run: sbt +publishSigned
+
+      - name: Upload to Maven Central Portal
         if: startsWith(github.ref, 'refs/tags/v')
         env:
-          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+        run: |
+          echo "Package all artifacts..."
+          cd target/deploy
+          zip -r ../bundle.zip .
+          cd ../..
+          
+          echo "Upload to Maven Central..."
+          curl --request POST --fail --show-error \
+            --header "Authorization: Bearer $(echo -n "${SONATYPE_USERNAME}:${SONATYPE_PASSWORD}" | base64 -w 0)" \
+            --form bundle=@target/bundle.zip \
+            "https://central.sonatype.com/api/v1/publisher/upload?publishingType=AUTOMATIC"
 
   mergify-build-checkpoint:
     runs-on: ubuntu-latest

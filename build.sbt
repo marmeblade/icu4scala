@@ -2,17 +2,7 @@ import org.typelevel.scalacoptions.ScalacOptions
 
 organization := "works.perpetuum"
 organizationName := "Perpetuum Works"
-publishTo := {
-  val nexus = "https://s01.oss.sonatype.org/"
-  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
-  else Some("releases" at nexus + "service/local/staging/deploy/maven2")
-}
-credentials += Credentials(
-  "Sonatype Nexus Repository Manager",
-  "s01.oss.sonatype.org",
-  sys.env.getOrElse("SONATYPE_USERNAME", ""),
-  sys.env.getOrElse("SONATYPE_PASSWORD", "")
-)
+publishTo := Some(Resolver.file("local-deploy", file("target/deploy")))
 pomIncludeRepository := { _ => false }
 versionScheme := Some("early-semver")
 homepage := Some(url("https://github.com/marmeblade/icu4scala"))
