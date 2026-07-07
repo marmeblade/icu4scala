@@ -16,6 +16,12 @@ developers := List(
     url("https://github.com/marmeblade")
   )
 )
+scmInfo := Some(
+  ScmInfo(
+    url("https://github.com/marmeblade/icu4scala"),
+    "scm:git@github.com:marmeblade/icu4scala.git"
+  )
+)
 
 semanticdbEnabled := true
 semanticdbVersion := scalafixSemanticdb.revision
